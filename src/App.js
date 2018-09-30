@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./css/App.css";
 import Lock from "./Lock";
-import { Smiley } from "./Smiley";
+import Smiley from "./Smiley";
 
 class App extends Component {
   state = {

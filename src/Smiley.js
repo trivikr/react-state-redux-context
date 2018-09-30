@@ -11,4 +11,4 @@ const smiley = ({ locked }) => (
   </span>
 );
 
-export { smiley as Smiley };
+export default smiley;
