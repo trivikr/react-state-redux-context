@@ -2,17 +2,14 @@ import React, { Component } from "react";
 import "./css/Lock.css";
 
 class Lock extends Component {
-  state = {
-    locked: true
-  };
   render() {
-    const { locked } = this.state;
+    const { locked, onClickUpdateState } = this.props;
     return (
       <span
         className="lockIcon"
         role="img"
         aria-label={`${locked ? "" : "un"}locked`}
-        onClick={() => this.setState({ locked: !locked })}
+        onClick={() => onClickUpdateState(!locked)}
       >
         {locked ? "🔒" : "🔓"}
       </span>

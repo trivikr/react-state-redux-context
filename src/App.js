@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import "./css/App.css";
 import Lock from "./Lock";
+import { Smiley } from "./Smiley";
 
 class App extends Component {
+  state = {
+    locked: true
+  };
+
   render() {
+    const { locked } = this.state;
     return (
       <div className="App">
         <div className="iconContainer">
-          <Lock />
+          <Lock
+            locked={locked}
+            onClickUpdateState={locked => this.setState({ locked })}
+          />
+        </div>
+        <div className="iconContainer">
+          <Smiley locked={locked} />
         </div>
       </div>
     );
