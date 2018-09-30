@@ -1,15 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "./css/Lock.css";
 
 class Lock extends Component {
   render() {
-    const { locked, onClickUpdateState } = this.props;
+    const { locked } = this.props;
     return (
       <span
         className="lockIcon"
         role="img"
         aria-label={`${locked ? "" : "un"}locked`}
-        onClick={() => onClickUpdateState(!locked)}
+        onClick={() => this.props.dispatch({ type: "TOGGLE" })}
       >
         {locked ? "🔒" : "🔓"}
       </span>
@@ -17,4 +18,7 @@ class Lock extends Component {
   }
 }
 
-export default Lock;
+const mapStateToProps = state => ({
+  locked: state.locked
+});
+export default connect(mapStateToProps)(Lock);
