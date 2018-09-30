@@ -1,3 +1,9 @@
 .App {
   display: flex;
+  margin: 10px;
+}
+
+.movieSearchToolbar {
+  display: flex;
+  flex-direction: column;
 }

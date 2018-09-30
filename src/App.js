@@ -8,12 +8,17 @@ class App extends Component {
   };
 
   onQueryUpdate = query => this.setState({ query });
-
   render() {
     const state = this.state;
     return (
       <div className="App">
-        <SearchTextBox query={state.query} onQueryUpdate={this.onQueryUpdate} />
+        <div className="movieSearchToolbar">
+          Movie Search
+          <SearchTextBox
+            query={state.query}
+            onQueryUpdate={this.onQueryUpdate}
+          />
+        </div>
       </div>
     );
   }
