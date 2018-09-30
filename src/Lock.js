@@ -1,29 +1,21 @@
 import React, { Component } from "react";
 import "./Lock.css";
 
-const LockIcon = ({ locked, onClickUpdateState }) => (
-  <span
-    className="lockIcon"
-    role="img"
-    aria-label={`${locked ? "" : "un"}locked`}
-    onClick={() => onClickUpdateState(!locked)}
-  >
-    {locked ? "🔒" : "🔓"}
-  </span>
-);
-
 class Lock extends Component {
   state = {
     locked: true
   };
   render() {
+    const { locked } = this.state;
     return (
-      <div className="lockIconContainer">
-        <LockIcon
-          locked={this.state.locked}
-          onClickUpdateState={locked => this.setState({ locked })}
-        />
-      </div>
+      <span
+        className="lockIcon"
+        role="img"
+        aria-label={`${locked ? "" : "un"}locked`}
+        onClick={() => this.setState({ locked: !locked })}
+      >
+        {locked ? "🔒" : "🔓"}
+      </span>
     );
   }
 }
