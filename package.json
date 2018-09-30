@@ -18,5 +18,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-prettier": "^2.7.0",
+    "husky": "^1.0.1",
+    "prettier": "1.14.3",
+    "pretty-quick": "^1.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
