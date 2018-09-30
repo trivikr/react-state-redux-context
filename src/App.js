@@ -1,27 +1,11 @@
-import React, { Component } from "react";
-import SearchTextBox from "./components/SearchTextBox";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import MovieSearch from "./components/MovieSearch";
 
-class App extends Component {
-  state = {
-    query: ""
-  };
-
-  onQueryUpdate = query => this.setState({ query });
-  render() {
-    const state = this.state;
-    return (
-      <div className="App">
-        <div className="movieSearchToolbar">
-          Movie Search
-          <SearchTextBox
-            query={state.query}
-            onQueryUpdate={this.onQueryUpdate}
-          />
-        </div>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <Router>
+      <Route exact={true} path="/" component={MovieSearch} />
+    </Router>
+  );
 }
-
-export default App;
