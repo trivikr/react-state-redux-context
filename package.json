@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react": "16.4.0-alpha.0911da3",
+    "react-dom": "16.4.0-alpha.0911da3",
     "react-scripts": "2.0.1"
   },
   "scripts": {
