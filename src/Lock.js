@@ -5,7 +5,7 @@ const LockIcon = ({ locked, onClickUpdateState }) => (
   <span
     className="lockIcon"
     role="img"
-    aria-label="locked"
+    aria-label={`${locked ? "" : "un"}locked`}
     onClick={() => onClickUpdateState(!locked)}
   >
     {locked ? "🔒" : "🔓"}
