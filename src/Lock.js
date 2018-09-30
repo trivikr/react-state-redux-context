@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Lock.css";
+import "./css/Lock.css";
 
 class Lock extends Component {
   state = {
