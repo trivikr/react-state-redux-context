@@ -3,25 +3,39 @@ import "./css/App.css";
 import Lock from "./Lock";
 import Smiley from "./Smiley";
 
+const LockContext = React.createContext({
+  locked: true,
+  toggle: () => {}
+});
+
 class App extends Component {
   state = {
     locked: true
   };
 
   render() {
-    const { locked } = this.state;
     return (
-      <div className="App">
-        <div className="iconContainer">
-          <Lock
-            locked={locked}
-            onClickUpdateState={locked => this.setState({ locked })}
-          />
+      <LockContext.Provider
+        value={{
+          locked: this.state.locked,
+          toggle: locked => this.setState({ locked })
+        }}
+      >
+        <div className="App">
+          <div className="iconContainer">
+            <LockContext.Consumer>
+              {({ locked, toggle }) => (
+                <Lock locked={locked} onClickUpdateState={toggle} />
+              )}
+            </LockContext.Consumer>
+          </div>
+          <div className="iconContainer">
+            <LockContext.Consumer>
+              {({ locked }) => <Smiley locked={locked} />}
+            </LockContext.Consumer>
+          </div>
         </div>
-        <div className="iconContainer">
-          <Smiley locked={locked} />
-        </div>
-      </div>
+      </LockContext.Provider>
     );
   }
 }
