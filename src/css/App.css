@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   border: solid;
+  margin: 20px;
 }
 
 .iconContainer {
-  margin: 50px;
+  margin: 20px;
   border: solid;
 }
