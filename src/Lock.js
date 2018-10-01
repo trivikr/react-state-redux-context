@@ -1,15 +1,19 @@
 import React, { Component } from "react";
+import LockStore from "./LockStore";
 import "./css/Lock.css";
 
 class Lock extends Component {
   render() {
-    const { locked, onClickUpdateState } = this.props;
+    const { store } = this.props;
+    const locked = store.get("locked");
     return (
       <span
         className="lockIcon"
         role="img"
         aria-label={`${locked ? "" : "un"}locked`}
-        onClick={() => onClickUpdateState(!locked)}
+        onClick={() => {
+          store.set("locked");
+        }}
       >
         {locked ? "🔒" : "🔓"}
       </span>
@@ -17,4 +21,4 @@ class Lock extends Component {
   }
 }
 
-export default Lock;
+export default LockStore.withStore(Lock);

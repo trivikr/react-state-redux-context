@@ -1,27 +1,22 @@
 import React, { Component } from "react";
+import LockStore from "./LockStore";
 import "./css/App.css";
 import Lock from "./Lock";
 import Smiley from "./Smiley";
 
 class App extends Component {
-  state = {
-    locked: true
-  };
-
   render() {
-    const { locked } = this.state;
     return (
-      <div className="App">
-        <div className="iconContainer">
-          <Lock
-            locked={locked}
-            onClickUpdateState={locked => this.setState({ locked })}
-          />
+      <LockStore.Container>
+        <div className="App">
+          <div className="iconContainer">
+            <Lock />
+          </div>
+          <div className="iconContainer">
+            <Smiley />
+          </div>
         </div>
-        <div className="iconContainer">
-          <Smiley locked={locked} />
-        </div>
-      </div>
+      </LockStore.Container>
     );
   }
 }
