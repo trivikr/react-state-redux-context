@@ -1,11 +1,12 @@
 .App {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border: solid;
-  margin: 20px;
+  margin: 10px;
 }
 
 .iconContainer {
-  margin: 20px;
+  margin: 10px;
   border: solid;
 }
