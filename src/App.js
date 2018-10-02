@@ -15,7 +15,7 @@ class App extends Component {
         <div className="iconContainer">
           <Lock
             locked={locked}
-            onClickUpdateState={locked => this.setState({ locked })}
+            toggle={() => this.setState({ locked: !locked })}
           />
         </div>
         <div className="iconContainer">

@@ -3,13 +3,13 @@ import "./css/Lock.css";
 
 class Lock extends Component {
   render() {
-    const { locked, onClickUpdateState } = this.props;
+    const { locked, toggle } = this.props;
     return (
       <span
         className="lockIcon"
         role="img"
         aria-label={`${locked ? "" : "un"}locked`}
-        onClick={() => onClickUpdateState(!locked)}
+        onClick={toggle}
       >
         {locked ? "🔒" : "🔓"}
       </span>
