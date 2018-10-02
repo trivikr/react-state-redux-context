@@ -1,4 +1,7 @@
-import { action, observable } from "mobx";
+import { action, configure, observable } from "mobx";
+
+// don't allow state modifications outside actions
+configure({ enforceActions: "observed" });
 
 const LockStore = observable({ locked: true });
 LockStore.toggle = action(function() {
