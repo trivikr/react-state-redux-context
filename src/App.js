@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "./css/App.css";
 import Lock from "./Lock";
 import Smiley from "./Smiley";
 
-class App extends Component {
+class App extends React.Component {
   state = {
     locked: true
   };
