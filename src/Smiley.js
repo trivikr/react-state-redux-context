@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/Smiley.css";
-import LockContext from "./LockContext";
+import { LockContext } from "./LockStore";
 
 const smiley = () => (
   <LockContext.Consumer>

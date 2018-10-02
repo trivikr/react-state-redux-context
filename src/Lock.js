@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./css/Lock.css";
-import LockContext from "./LockContext";
+import { LockContext } from "./LockStore";
 
 class Lock extends Component {
   render() {

@@ -2,21 +2,12 @@ import React, { Component } from "react";
 import "./css/App.css";
 import Lock from "./Lock";
 import Smiley from "./Smiley";
-import LockContext from "./LockContext";
+import { LockStore } from "./LockStore";
 
 class App extends Component {
-  state = {
-    locked: true
-  };
-
   render() {
     return (
-      <LockContext.Provider
-        value={{
-          locked: this.state.locked,
-          toggle: () => this.setState({ locked: !this.state.locked })
-        }}
-      >
+      <LockStore>
         <div className="App">
           <div className="iconContainer">
             <Lock />
@@ -25,7 +16,7 @@ class App extends Component {
             <Smiley />
           </div>
         </div>
-      </LockContext.Provider>
+      </LockStore>
     );
   }
 }
