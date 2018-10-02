@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Lock.css";
 
-class Lock extends Component {
+class Lock extends React.Component {
   state = {
     locked: true
   };

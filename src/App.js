@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import Lock from "./Lock";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="iconContainer">
-          <Lock />
-        </div>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <div className="iconContainer">
+      <Lock />
+    </div>
+  </div>
+);
 
 export default App;
