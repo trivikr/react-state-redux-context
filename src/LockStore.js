@@ -14,6 +14,9 @@ const reducer = (state = { locked: true }, action) => {
       return state;
   }
 };
-const LockStore = createStore(reducer);
+const LockStore = createStore(
+  reducer /*,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/
+);
 
 export { LockStore, mapStateToProps };
