@@ -6,7 +6,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Lock />
+        <div className="iconContainer">
+          <Lock />
+        </div>
       </div>
     );
   }
