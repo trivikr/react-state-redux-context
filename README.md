@@ -1,5 +1,5 @@
 # react-state-redux-context
-React State vs Redux vs Context
+React State vs Redux vs MobX vs Context
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
