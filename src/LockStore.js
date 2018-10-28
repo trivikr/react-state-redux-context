@@ -4,8 +4,9 @@ import { action, configure, observable } from "mobx";
 configure({ enforceActions: "observed" });
 
 const LockStore = observable({ locked: true });
-LockStore.toggle = action(function toggle() {
+const toggle = () => {
   LockStore.locked = !LockStore.locked;
-});
+};
+LockStore.toggle = action(toggle);
 
 export default LockStore;
